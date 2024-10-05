@@ -4,7 +4,9 @@
     // utilty or helper class, like extention methods
     // static class can't have base classes
     // static class can't implment interfaces
-
+    // can't use sealed in the static class, Static classes are sealed
+    // Static classes maintain state using static fields, but this state is shared across all usages and is not tied to any instance.
+    
     //public static class StaticClass : StaticBaseClass
     //public static class StaticClass : IA
 
