@@ -1,6 +1,8 @@
 ﻿using CSharpLearning.AbstractVersusInterface;
 using CSharpLearning.ConcereteClassVersusStaticClass;
 using CSharpLearning.Extensions_Methods;
+using CSharpLearning.SolidPrinciples.OpenClosedPrinciple;
+using CSharpLearning.SolidPrinciples;
 using CSharpLearning.StaticVersusSingleton;
 
 // Extension method example
@@ -36,4 +38,19 @@ Console.WriteLine(ConcreteClass.Gender);
 //Task.WaitAll(tasks);
 
 //Console.WriteLine("All threads completed."); 
+#endregion
+
+
+#region OpenClosedPrincipleExample
+// Using Email Notification
+INotificationService emailService = new EmailNotificationService();
+var productManagerWithEmail = new OpenClosedPrinciple(emailService);
+var product1 = new Product(1, "Laptop");
+productManagerWithEmail.AddProduct(product1); // This will send an email notification
+
+// Using SMS Notification
+INotificationService smsService = new SMSNotificationService();
+var productManagerWithSMS = new OpenClosedPrinciple(smsService);
+var product2 = new Product(2, "Smartphone");
+productManagerWithSMS.AddProduct(product2); // This will send an SMS notification 
 #endregion
